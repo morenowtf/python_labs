@@ -1,7 +1,7 @@
-a = float(input("Введите первое число: "))
-b = float(input("Введите второе число: "))
+firstNumber = input("Введите первое число: ").replace(",", ".")
+secondNumber = input("Введите второе число: ").replace(',', '.')
 
-sum = 1
-avg = 2
+summary = float(firstNumber) + float(secondNumber)
+avg = (summary / 2 )
 
-print(f"sum={sum}; avg={avg}")
+print(f"Сумма = {summary} ; Среднее арифметическое = {avg}")
