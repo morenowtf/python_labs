@@ -7,6 +7,3 @@ vat_amount = base * (vat/100)
 total = base + vat_amount
 
 print(f"База после скидки: {base:.2f} ₽ \nНДС: {vat_amount:.2f} ₽ \nИтого к оплате: {total:.2f} ₽")
-#База после скидки: 900.00 ₽
-#НДС:               180.00 ₽
-#Итого к оплате:    1080.00 ₽
