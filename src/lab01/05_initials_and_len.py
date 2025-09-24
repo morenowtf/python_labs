@@ -7,4 +7,4 @@ for char in fullName:
 
 strLength = len(fullName.replace(" ", ""))
 
-print(f"Инициалы: {uppercase} \nКоличество символов без пробелов: {strLength}")
+print(f"Инициалы: {uppercase}. \nКоличество символов без пробелов: {strLength}")
