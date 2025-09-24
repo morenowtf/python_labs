@@ -44,7 +44,7 @@ remaining_minutes = minutes % 60
 
 print(f"Минуты: {minutes} \n{hours}:{remaining_minutes:02d}")
 ```
-[![img44.png](https://imgur.com/a/J9CPiEI)
+[![img44.png](https://i.postimg.cc/xC5KjjHy/img44.png)](https://postimg.cc/1nggJQvf)
 
 ### Задание 5
 ```python
