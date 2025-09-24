@@ -7,7 +7,7 @@ age = int(input("Введите ваш возраст: "))
 
 print(f"Привет, {name}! Через год тебе будет {age + 1}.")
 ```
-![ex01](https://pasteboard.co/rrPW22EOE2RS.png)
+[![img1.png](https://i.postimg.cc/DmkF39QK/img1.png)](https://postimg.cc/0KfhpHHt)
 
 ### Задание 2
 ```python
@@ -19,6 +19,7 @@ avg = (summary / 2 )
 
 print(f"Сумма = {summary} ; Среднее арифметическое = {avg}")
 ```
+[![img2.png](https://i.postimg.cc/PxT292vF/img2.png)](https://postimg.cc/jW3HJ6Xz)
 
 ### Задание 3
 ```python
@@ -32,6 +33,7 @@ total = base + vat_amount
 
 print(f"База после скидки: {base:.2f} ₽ \nНДС: {vat_amount:.2f} ₽ \nИтого к оплате: {total:.2f} ₽")
 ```
+[![img3.png](https://i.postimg.cc/yYMh2vwX/img3.png)](https://postimg.cc/LnVZ1B4n)
 
 ### Задание 4
 ```python
@@ -42,6 +44,7 @@ remaining_minutes = minutes % 60
 
 print(f"Минуты: {minutes} \n{hours}:{remaining_minutes:02d}")
 ```
+[![img4.png](https://i.postimg.cc/7hC7W29W/img4.png)](https://postimg.cc/2LDVq3PQ)
 
 ### Задание 5
 ```python
@@ -56,3 +59,4 @@ strLength = len(fullName.replace(" ", ""))
 
 print(f"Инициалы: {uppercase} \nКоличество символов без пробелов: {strLength}")
 ```
+[![img5.png](https://i.postimg.cc/WpDXKFdV/img5.png)](https://postimg.cc/RqB7J01p)
