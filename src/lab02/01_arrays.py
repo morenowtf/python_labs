@@ -1,5 +1,5 @@
 #ПЕРВАЯ ФУНЦИЯ
-""""def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
+def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     min_number = min(nums)
     max_number = max(nums)
 
@@ -12,8 +12,9 @@
 print(min_max([3, -1, 5, 5, 0]))
 print(min_max([42]))
 print(min_max([-5, -2, -9]))
+print(min_max([]))
 print(min_max([1.5, 2, 2.0, -3.1]))
-print(min_max([]))"""
+#print(min_max([]))
 
 
 #ВТОРАЯ ФУНКЦИЯ
@@ -33,11 +34,11 @@ print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))"""
 
 
 #ТРЕТЬЯ ФУНКЦИЯ
-def flatten(mat: list[list | tuple]) -> list:
+"""def flatten(mat: list[list | tuple]) -> list:
     flattened_list = []
     for item in mat:
-        if isinstance(item, (list, tuple)):  # проверяем что это список или кортеж
-            flattened_list.extend(item)  # добавляем все элементы из вложенного списка/кортежа
+        if isinstance(item, (list, tuple)):
+            flattened_list.extend(item) 
         else:
             raise TypeError("Строка не строка строк матрицы")
     return flattened_list
@@ -46,4 +47,4 @@ def flatten(mat: list[list | tuple]) -> list:
 print(flatten([[1, 2], [3, 4]]))
 print(flatten(([1, 2], (3, 4, 5))))
 print(flatten([[1], [], [2, 3]]))
-print(flatten([[1, 2], "ab"]))
+print(flatten([[1, 2], "ab"]))"""
