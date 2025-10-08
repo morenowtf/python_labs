@@ -96,5 +96,35 @@ if not mat:
 
 [![203.png](https://i.postimg.cc/kgnPKHHJ/203.png)](https://postimg.cc/zVPQ1x56)
 
+## Задание 3
+```python
+def format_record(rec: tuple[str, str, float]) -> str:
+    fio, group, gpa = rec
+    
+    if not fio or not fio.strip():
+        raise ValueError("ФИО не может быть пустым")
+    if not group or not group.strip():
+        raise ValueError("Группа не может быть пустой")
+    if not isinstance(gpa, (int, float)):
+        raise TypeError("GPA должно быть числом")
+    
+    fio_parts = ' '.join(fio.split()).title().split()
+    
+    if len(fio_parts) == 3:
+        initials = f"{fio_parts[1][0]}.{fio_parts[2][0]}."
+    elif len(fio_parts) == 2:
+        initials = f"{fio_parts[1][0]}."
+    else:
+        raise ValueError("ФИО должно содержать 2 или 3 части")
+    
+    formatted_gpa = f"{gpa:.2f}"
+    
+    return f"{fio_parts[0]} {initials}, гр. {group.strip()}, GPA {formatted_gpa}"
+```
+Извлекаем ФИО, группу и GPA из кортежа, проверяем их корректность, обрабатываем ФИО для формирования инициалов, форматируем GPA до двух знаков и собираем всё в требуемую строку.
+
+[![301.png](https://i.postimg.cc/Bbgn3MB6/301.png)](https://postimg.cc/9wDhtPS5)
+
+
 
 
