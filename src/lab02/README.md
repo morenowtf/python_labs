@@ -69,7 +69,6 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     if not mat:
         return []
     
-    # Проверка на прямоугольность
     first_len = len(mat[0])
     for row in mat:
         if len(row) != first_len:
@@ -83,21 +82,19 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
 
 ### Третья функция
 ```python
-def col_sums(mat: list[list[float | int]]) -> list[float]:
-    if not mat:
+if not mat:
         return []
     
-    # Проверка на прямоугольность
     first_len = len(mat[0])
     for row in mat:
         if len(row) != first_len:
             raise ValueError("Рваная матрица")
     
-    # Суммируем элементы по столбцам
     return [sum(mat[i][j] for i in range(len(mat))) for j in range(len(mat[0]))]
 ```
 Суммируем элементы каждого столбца, проверяя что матрица прямоугольная.
 
 [![203.png](https://i.postimg.cc/kgnPKHHJ/203.png)](https://postimg.cc/zVPQ1x56)
+
 
 
