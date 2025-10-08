@@ -1,3 +1,4 @@
+#ПЕРВАЯ ФУНКЦИЯ
 """def transpose(mat: list[list[float | int]]) -> list[list]:
     if not mat:
         return []
@@ -11,6 +12,8 @@
     # Создаем новую матрицу с размерами MxN -> NxM
     return [[mat[i][j] for i in range(len(mat))] for j in range(len(mat[0]))]
 
+    
+#ТЕСТЫ
 print(transpose([[1, 2, 3]]))
 print(transpose([[1], [2], [3]]))
 print(transpose([[1, 2], [3, 4]]))
@@ -18,6 +21,8 @@ print(transpose([]))
 print(transpose([[1, 2], [3]]))"""
 
 
+
+#ВТОРАЯ ФУНКЦИЯ
 """def row_sums(mat: list[list[float | int]]) -> list[float]:
     if not mat:
         return []
@@ -31,12 +36,14 @@ print(transpose([[1, 2], [3]]))"""
     return [sum(row) for row in mat]
 
 
+#ТЕСТЫ
 print(row_sums([[1, 2, 3], [4, 5, 6]]))
 print(row_sums([[-1, 1], [10, -10]]))
 print(row_sums([[0, 0], [0, 0]]))
 print(row_sums([[1, 2], [3]]))"""
 
 
+#ТРЕТЬЯ ФУНКЦИЯ
 def col_sums(mat: list[list[float | int]]) -> list[float]:
     if not mat:
         return []
@@ -51,6 +58,7 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     return [sum(mat[i][j] for i in range(len(mat))) for j in range(len(mat[0]))]
 
 
+#ТЕСТЫ
 print(col_sums([[1, 2, 3], [4, 5, 6]]))
 print(col_sums([[-1, 1], [10, -10]]))
 print(col_sums([[0, 0], [0, 0]]))
