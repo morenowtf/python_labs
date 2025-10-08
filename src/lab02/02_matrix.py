@@ -25,7 +25,6 @@ print(transpose([[1, 2], [3]]))
     if not mat:
         return []
     
-    # Проверка на прямоугольность
     first_len = len(mat[0])
     for row in mat:
         if len(row) != first_len:
@@ -46,13 +45,11 @@ print(row_sums([[1, 2], [3]]))"""
     if not mat:
         return []
     
-    # Проверка на прямоугольность
     first_len = len(mat[0])
     for row in mat:
         if len(row) != first_len:
             raise ValueError("Рваная матрица")
     
-    # Суммируем элементы по столбцам
     return [sum(mat[i][j] for i in range(len(mat))) for j in range(len(mat[0]))]
 
 
