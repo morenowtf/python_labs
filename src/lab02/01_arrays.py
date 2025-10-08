@@ -1,10 +1,10 @@
 #ПЕРВАЯ ФУНЦИЯ
-def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
-    min_number = min(nums)
-    max_number = max(nums)
-
+"""def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
     if not nums:
         raise ValueError("Вы не ввели число!")
+
+    min_number = min(nums)
+    max_number = max(nums)
 
     return (min_number, max_number)
 
@@ -13,7 +13,7 @@ print(min_max([3, -1, 5, 5, 0]))
 print(min_max([42]))
 print(min_max([-5, -2, -9]))
 print(min_max([1.5, 2, 2.0, -3.1]))
-print(min_max([]))
+print(min_max([]))"""
 
 
 #ВТОРАЯ ФУНКЦИЯ
@@ -22,8 +22,8 @@ print(min_max([]))
     unique_nums.sort()
     return unique_nums
 
-    #if not nums:
-        #raise ValueError("Вы не ввели число!")
+    if not nums:
+        raise ValueError("Вы не ввели число!")
 
 #ТЕСТЫ
 print(unique_sorted([3, 1, 2, 1, 3]))
@@ -33,7 +33,7 @@ print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))"""
 
 
 #ТРЕТЬЯ ФУНКЦИЯ
-"""def flatten(mat: list[list | tuple]) -> list:
+def flatten(mat: list[list | tuple]) -> list:
     flattened_list = []
     for item in mat:
         if isinstance(item, (list, tuple)):
@@ -46,4 +46,4 @@ print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))"""
 print(flatten([[1, 2], [3, 4]]))
 print(flatten(([1, 2], (3, 4, 5))))
 print(flatten([[1], [], [2, 3]]))
-print(flatten([[1, 2], "ab"]))"""
+print(flatten([[1, 2], "ab"]))
