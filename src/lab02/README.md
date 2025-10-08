@@ -12,7 +12,7 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
 
     return (min_number, max_number)
 ```
-Находим минимум и максимум в списке чисел и возвращаем их как кортеж, а если список пуст — вызываем ошибку.
+Находим минимум и максимум в списке чисел и возвращаем их как кортеж, а если список пуст - вызываем ошибку.
 
 [![101.png](https://i.postimg.cc/TYjXyxtY/101.png)](https://postimg.cc/4m30MDCr)
 
@@ -99,4 +99,5 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
 Суммируем элементы каждого столбца, проверяя что матрица прямоугольная.
 
 [![203.png](https://i.postimg.cc/kgnPKHHJ/203.png)](https://postimg.cc/zVPQ1x56)
+
 
