@@ -78,10 +78,18 @@ from lib.text import summary  # Импорт функции для анализ�
 
 def main():
     # Читаем текстовый файл, анализируем его содержимое и генерируем CSV-отчет с частотой слов
+    
+    # Парсим аргументы командной строки: входной файл и его кодировку
+    parser = argparse.ArgumentParser(description='Generate word frequency report')
+    parser.add_argument('--in', dest='input_file', default='./data/lab04/input.txt',
+                       help='Input text file path')
+    parser.add_argument('--encoding', default='utf-8',
+                       help='Input file encoding (default: utf-8)')
+    args = parser.parse_args()
 
     try:        
-        # Чтение содержимого текстового файла
-        content = read_text("./data/lab04/input.txt")
+         # Чтение содержимого текстового файла с использованием указанных пути и кодировки
+        content = read_text(args.input_file, encoding=args.encoding)
         
         # Проверка, не пустой ли файл
         if not content.strip():
@@ -152,3 +160,4 @@ if __name__ == "__main__":
 
 В файле "report.csv" получаем:
 [![505.png](https://i.postimg.cc/QC6L0Vrw/505.png)](https://postimg.cc/BP1wvSbB)
+
