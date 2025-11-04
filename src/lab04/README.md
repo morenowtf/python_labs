@@ -135,9 +135,11 @@ if __name__ == "__main__":
 Вводим в терминал команду "python src/lab04/text_report.py --in data/lab04/input.txt --out data/lab04/report.csv"
 
 В консоле получаем:
+
 [![501.png](https://i.postimg.cc/rpNbFzPM/501.png)](https://postimg.cc/1g4MvRSj)
 
 А в папке data/lab04 создаётся файл "report.csv" с такими данными:
+
 [![502.png](https://i.postimg.cc/Fs0wnPg2/502.png)](https://postimg.cc/HVsSr9N2)
 
 ### Тест-кейс B
@@ -147,9 +149,11 @@ if __name__ == "__main__":
 Вводим в терминал команду "python src/lab04/text_report.py --in data/lab04/input.txt --out data/lab04/report.csv"
 
 В консоле получаем:
+
 [![503.png](https://i.postimg.cc/3xdmxqf7/503.png)](https://postimg.cc/fVQJH8hg)
 
 А в самом файле получаем:
+
 [![504.png](https://i.postimg.cc/rsZz6Vkd/504.png)](https://postimg.cc/PvZdYkNh)
 
 ### Тест-кейс C
@@ -159,5 +163,7 @@ if __name__ == "__main__":
 Вводим в терминал команду "python src/lab04/text_report.py --in data/lab04/input.txt --encoding cp1251"
 
 В файле "report.csv" получаем:
+
 [![505.png](https://i.postimg.cc/QC6L0Vrw/505.png)](https://postimg.cc/BP1wvSbB)
+
 
