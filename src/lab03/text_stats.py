@@ -7,9 +7,6 @@ def main():
     # Читаем весь вход до EOF
     input_text = sys.stdin.readline()
 
-    if not input_text:
-        print("Ошибка: Введен пустой текст")
-        return
 
     # Нормализация
     text_norm = normalize(input_text)

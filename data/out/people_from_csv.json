@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Иван Петров",
+    "age": "25",
+    "city": "Москва",
+    "occupation": "Инженер",
+    "salary": "75000",
+    "department": "IT"
+  },
+  {
+    "name": "Мария Сидорова",
+    "age": "30",
+    "city": "Санкт-Петербург",
+    "occupation": "Дизайнер",
+    "salary": "65000",
+    "department": "Design"
+  },
+  {
+    "name": "Алексей Козлов",
+    "age": "28",
+    "city": "Новосибирск",
+    "occupation": "Разработчик",
+    "salary": "80000",
+    "department": "IT"
+  },
+  {
+    "name": "Елена Новикова",
+    "age": "22",
+    "city": "Москва",
+    "occupation": "Менеджер",
+    "salary": "55000",
+    "department": "Sales"
+  }
+]
