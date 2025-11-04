@@ -1,64 +1,59 @@
+# read_text / write_csv (+ ensure_parent_dir)
 import csv
 from pathlib import Path
-from typing import Iterable, Sequence, Union
+from typing import Iterable, Sequence
+from collections import Counter
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from lib.text import normalize, tokenize, count_freq, top_n
 
 
-def read_text(path: Union[str, Path], encoding: str = "utf-8") -> str:
-    """
-    Читает текстовый файл и возвращает его содержимое как строку.
+def read_text(path: str | Path, encoding: str = "utf-8") -> str:
+    """Читает текстовый файл и возвращает его содержимое в виде строки.
     
-    Args:
-        path: Путь к файлу
-        encoding: Кодировка файла (по умолчанию UTF-8). 
-                 Для русских текстов можно использовать 'cp1251', 'koi8-r'
+    Аргументы:
+    path: Путь к файлу (строка или Path-объект)
+    encoding: Кодировка файла
     
-    Returns:
-        Содержимое файла как строка
+    Возвращает:
+    Содержимое файла как строку"""
         
-    Raises:
-        FileNotFoundError: Если файл не существует
-        UnicodeDecodeError: Если не удается декодировать файл в указанной кодировке
-    """
     p = Path(path)
+    # FileNotFoundError и UnicodeDecodeError пусть «всплывают» — это нормально
     return p.read_text(encoding=encoding)
 
-
-def write_csv(rows: Iterable[Sequence], path: Union[str, Path], 
-              header: tuple[str, ...] = None) -> None:
-    """
-    Записывает данные в CSV файл.
+def write_csv(rows: Iterable[Sequence], path: str | Path,
+              header: tuple[str, ...] | None = None) -> None:
+    """Записывает данные в CSV-файл, создавая при необходимости родительские директории.
     
-    Args:
-        rows: Итерируемый объект с данными для записи
-        path: Путь для сохранения CSV файла
-        header: Заголовок столбцов (опционально)
-        
-    Raises:
-        ValueError: Если строки имеют разную длину
+    Аргументы:
+    rows: Итерируемый объект со строками данных
+    path: Путь для сохранения CSV-файла
+    header: Опциональный заголовок для CSV
     """
     p = Path(path)
-    rows_list = list(rows)
-    
-    # Проверка одинаковой длины строк
-    if rows_list:
-        first_len = len(rows_list[0])
-        for i, row in enumerate(rows_list):
-            if len(row) != first_len:
-                raise ValueError(f"Строка {i} имеет длину {len(row)}, ожидалось {first_len}")
-    
-    with p.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.writer(f)
+    rows = list(rows)
+    with p.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
         if header is not None:
-            writer.writerow(header)
-        writer.writerows(rows_list)
+            w.writerow(header) # Записываем заголовок если он предоставлен
+        for r in rows:
+            w.writerow(r) # Записываем каждую строку данных
 
+def frequencies_from_text(text: str) -> dict[str, int]:
+    """Вычисляет частоты слов в тексте после нормализации и токенизации.
+    Принимает - text: Исходный текст для анализа | Возвращает - Словарь с частотой каждого слова"""
 
-def ensure_parent_dir(path: Union[str, Path]) -> None:
-    """
-    Создает родительские директории для указанного пути, если они не существуют.
+    tokens = tokenize(normalize(text)) # Нормализация -> токенизация
+    return Counter(tokens)  # Подсчет частот с помощью Counter
+
+def sorted_word_counts(freq: dict[str, int]) -> list[tuple[str, int]]:
+    """Сортирует словарь частот по убыванию частоты и лексикографически.
+    Принимает - freq: Словарь с частотами слов | Возвращает - Отсортированный список кортежей (слово, частота)"""
     
-    Args:
-        path: Путь к файлу
-    """
-    p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True)
+    # Сортировка сначала по убыванию частоты (-kv[1]), 
+    # затем по алфавиту (kv[0])
+    return sorted(freq.items(), key=lambda kv: (-kv[1], kv[0]))
