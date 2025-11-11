@@ -188,6 +188,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     wb.save(xlsx_path)
 ```
 
+Этот код конвертирует CSV-файл в XLSX-формат с автоматической настройкой ширины колонок.
 ![Картинка 4](./images/lab05/csv_xslx.png)
 ![Картинка 5](./images/lab05/cities_csv_xslx.png)
 ![Картинка 6](./images/lab05/weather_csv_xslx.png)
