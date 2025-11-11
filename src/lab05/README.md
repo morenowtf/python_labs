@@ -105,6 +105,8 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     with json_path.open('w', encoding='utf-8') as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)
 ```
+
+Этот код содержит две функции для конвертации между JSON и CSV форматами: json_to_csv преобразует JSON-файл в CSV, а csv_to_json выполняет обратное преобразование.
 ![Картинка 1](./images/lab05/json_csv.png)
 ![Картинка 2](./images/lab05/people_json_csv.png)
 ![Картинка 3](./images/lab05/students_recipes_json_csv.png)
