@@ -6,67 +6,75 @@ from openpyxl.utils import get_column_letter
 
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     """
-    Конвертирует CSV в XLSX.
-    Использовать openpyxl.
-    Первая строка CSV — заголовок.
-    Лист называется "Sheet1".
-    Колонки — автоширина по длине текста (не менее 8 символов).
+    Преобразует CSV файл в формат XLSX.
+    Используется библиотека openpyxl для работы с Excel.
+    Первая строка исходного файла считается заголовком таблицы.
+    Лист получает название "Sheet1".
+    Для удобства просмотра устанавливается автоширина колонок с минимальным значением 8 символов.
     """
-    csv_path = Path(csv_path)
-    xlsx_path = Path(xlsx_path)
+    # Преобразуем пути в объекты Path для удобной работы с файловой системой
+    csv_file = Path(csv_path)
+    excel_file = Path(xlsx_path)
     
-    if not csv_path.exists():
-        raise FileNotFoundError(f"CSV файл не найден: {csv_path}")
+    # Проверяем существование исходного CSV файла
+    if not csv_file.exists():
+        raise FileNotFoundError(f"Не удается найти CSV файл по указанному пути: {csv_file}")
     
-    # Чтение CSV
-    data = []
+    # Читаем данные из CSV файла
+    csv_data = []
     try:
-        with csv_path.open('r', encoding='utf-8') as f:
-            # Автоопределение разделителя
-            sample = f.read(1024)
-            f.seek(0)
-            sniffer = csv.Sniffer()
-            dialect = sniffer.sniff(sample)
+        # Открываем файл с автоматическим определением кодировки
+        with csv_file.open('r', encoding='utf-8') as file:
+            # Определяем разделитель по содержимому файла
+            sample_content = file.read(1024)
+            file.seek(0)  # Возвращаемся к началу файла
+            dialect_detector = csv.Sniffer()
+            csv_dialect = dialect_detector.sniff(sample_content)
             
-            reader = csv.reader(f, dialect=dialect)
+            # Создаем reader с определенным разделителем
+            csv_reader = csv.reader(file, dialect=csv_dialect)
             
-            for row in reader:
-                data.append(row)
+            # Построчно считываем все данные
+            for line in csv_reader:
+                csv_data.append(line)
                 
     except csv.Error as e:
-        raise ValueError(f"Ошибка чтения CSV: {e}")
+        raise ValueError(f"Проблема с форматом CSV файла: {e}")
     except Exception as e:
-        raise ValueError(f"Ошибка обработки CSV: {e}")
+        raise ValueError(f"Общая ошибка при обработке CSV: {e}")
     
-    # Валидация
-    if not data:
-        raise ValueError("CSV файл пуст")
+    # Проверяем что файл не пустой
+    if not csv_data:
+        raise ValueError("CSV файл не содержит данных")
     
-    # Создание XLSX
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Sheet1"
+    # Создаем новую книгу Excel
+    excel_workbook = Workbook()
+    excel_sheet = excel_workbook.active
+    excel_sheet.title = "Sheet1"  # Устанавливаем название листа
     
-    # Запись данных
-    for row in data:
-        ws.append(row)
+    # Переносим данные из CSV в Excel
+    for row_data in csv_data:
+        excel_sheet.append(row_data)
     
-    # Настройка автоширины колонок
-    for col_idx, column_cells in enumerate(ws.columns, 1):
-        max_length = 0
-        column_letter = get_column_letter(col_idx)
+    # Настраиваем ширину колонок для лучшего отображения
+    for column_index, column_cells in enumerate(excel_sheet.columns, 1):
+        max_text_length = 0
+        current_column_letter = get_column_letter(column_index)
         
+        # Ищем самую длинную ячейку в колонке
         for cell in column_cells:
             try:
-                if cell.value:
-                    max_length = max(max_length, len(str(cell.value)))
+                if cell.value is not None:
+                    # Обновляем максимальную длину если нашли большее значение
+                    max_text_length = max(max_text_length, len(str(cell.value)))
             except:
-                pass
+                # Пропускаем ячейки с ошибками преобразования
+                continue
         
-        # Минимальная ширина 8 символов
-        adjusted_width = max(max_length + 2, 8)
-        ws.column_dimensions[column_letter].width = adjusted_width
+        # Устанавливаем ширину колонки (минимум 8 символов)
+        column_width = max(max_text_length + 2, 8)
+        excel_sheet.column_dimensions[current_column_letter].width = column_width
     
-    # Сохранение
-    xlsx_path.parent.mkdir(parents=True, exist_ok=True)
-    wb.save(xlsx_path)
+    # Сохраняем результат
+    excel_file.parent.mkdir(parents=True, exist_ok=True)  # Создаем папки если нужно
+    excel_workbook.save(excel_file)
