@@ -109,7 +109,6 @@ def main():
     elif args.cmd == "csv2xlsx":
         csv_to_xlsx(Path(args.input), Path(args.output))
 
-# Точка входа в программу
 if __name__ == "__main__":
     main()
 ```
