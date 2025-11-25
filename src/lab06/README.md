@@ -58,8 +58,8 @@ def main():
         data = "".join(data)  # Объединение строк в одну строку
     
         # Анализ текста: токенизация, подсчет частот, выбор топ-N
-        tokens = tokenize(data)      # Разбивка текста на слова/токены
-        freq = count_freq(tokens)    # Подсчет частоты каждого токена
+        tokens = tokenize(data)  # Разбивка текста на слова/токены
+        freq = count_freq(tokens)  # Подсчет частоты каждого токена
         top = top_n(freq, args.top)  # Выбор N самых частых слов
     
         # Вывод результатов
@@ -69,7 +69,6 @@ def main():
             print(f"{number}. '{word}' - {count} раз")
             number += 1
 
-# Точка входа - выполнение main() при запуске скрипта напрямую
 if __name__ == "__main__":
     main()
 ```
