@@ -75,8 +75,7 @@ if __name__ == "__main__":
 
 Этот код реализует CLI-утилиту с двумя командами: cat для вывода содержимого файла и stats для показа топ-N самых частых слов в файле.
 
-[![41.png](https://i.postimg.cc/Rh59fj8G/41.png)](https://postimg.cc/8JHqgnTr)
-[![42.png](https://i.postimg.cc/4xNGzv8L/42.png)](https://postimg.cc/jL9BTfYP)
+[![01.png](https://i.postimg.cc/xCr9MPMc/01.png)](https://postimg.cc/gwD9P8MW)
 
 ## CLI‑конвертер
 
@@ -132,5 +131,6 @@ if __name__ == "__main__":
 ```
 
 Этот код предоставляет интерфейс командной строки для конвертации файлов между форматами JSON, CSV и XLSX.
-[![43.png](https://i.postimg.cc/FHBRWFBQ/43.png)](https://postimg.cc/87LNsGGy)
-[![44.png](https://i.postimg.cc/xCK11vjx/44.png)](https://postimg.cc/9RQhxq7Z)
+
+[![02.png](https://i.postimg.cc/QxrGmtFT/02.png)](https://postimg.cc/SjVvNm7S)
+[![03.png](https://i.postimg.cc/B61kc944/03.png)](https://postimg.cc/zb8x8Qyc)
