@@ -1,6 +1,6 @@
 # Лабораторная работа 7
 
-## Тесты для src/lib/text.py (test_text.py)
+## 1. Тесты для src/lib/text.py (test_text.py)
 
 ``` python 
 import sys
@@ -66,7 +66,7 @@ def test_top_n_tie_breaker():
 
 [![001.png](https://i.postimg.cc/G2FnY8kX/001.png)](https://postimg.cc/tZ4cGgv6)
 
-## Тесты для src/lab05/json_csv.py (test_json_csv.py)
+## 2. Тесты для src/lab05/json_csv.py (test_json_csv.py)
 
 ``` python
 import csv
