@@ -73,7 +73,7 @@ if __name__ == "__main__":
     main()
 ```
 
-Этот код содержит две функции для конвертации между JSON и CSV форматами: json_to_csv преобразует JSON-файл в CSV, а csv_to_json выполняет обратное преобразование.
+Этот код реализует CLI-утилиту с двумя командами: cat для вывода содержимого файла и stats для показа топ-N самых частых слов в файле.
 
 [![41.png](https://i.postimg.cc/Rh59fj8G/41.png)](https://postimg.cc/8JHqgnTr)
 [![42.png](https://i.postimg.cc/4xNGzv8L/42.png)](https://postimg.cc/jL9BTfYP)
@@ -131,6 +131,6 @@ if __name__ == "__main__":
     main()
 ```
 
-Этот код конвертирует CSV-файл в XLSX-формат с автоматической настройкой ширины колонок.
+Этот код предоставляет интерфейс командной строки для конвертации файлов между форматами JSON, CSV и XLSX.
 [![43.png](https://i.postimg.cc/FHBRWFBQ/43.png)](https://postimg.cc/87LNsGGy)
 [![44.png](https://i.postimg.cc/xCK11vjx/44.png)](https://postimg.cc/9RQhxq7Z)
