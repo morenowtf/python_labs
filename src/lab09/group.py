@@ -3,7 +3,6 @@ from pathlib import Path
 from src.lab08.models import Student
 
 from typing import List
-from datetime import datetime
 
 class Group:
     """

@@ -1,6 +1,5 @@
-from dataclasses import dataclass, asdict  # dataclass - для удобных классов
-from datetime import datetime, date        # datetime - для работы с датами
-import re                                  # re - для проверки форматов (регулярные выражения)
+from dataclasses import dataclass  # dataclass - для удобных классов
+from datetime import datetime, date        # datetime - для работы с датами                              # re - для проверки форматов (регулярные выражения)
 
 
 @dataclass
@@ -33,7 +32,7 @@ class Student:
             datetime.strptime(self.birthdate, "%Y-%m-%d")
         except ValueError:
             # (по-хорошему, тут должен быть raise ValueError(...))
-            print("warning: birthdate format might be invalid")
+            raise ValueError("warning: birthdate format might be invalid")
         
         # ВАЛИДАЦИЯ 3: Проверяем, что GPA в диапазоне от 0 до 5
         if not (0 <= self.gpa <= 5):
@@ -124,9 +123,9 @@ class Student:
         
         
 if __name__ == "__main__":
-    student = Student("Королева Дарья Михайловна", "2006-09-26", "БИВТ-25-1", 5.0)
+    student = Student("Котилевич Егор Александрович", "2006-10-27", "БИВТ-25-1", 2.1)
     print(student)
-    print( "=" * 140)
+    print( "=" * 35)
 
     print(f"Возраст: {student.age()}")
     

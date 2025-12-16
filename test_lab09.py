@@ -1,15 +1,10 @@
-#!/usr/bin/env python3
-"""
-Тестовый скрипт для проверки лабораторной работы 9.
-"""
-
 from src.lab09.group import Group, Student
 
 def main():
     # Создаем группу студентов
     group = Group("data/lab09/students.csv")
     
-    print("Изначательный список:\n")
+    print("Изначальный список:\n")
     for s in group.list():
         print(s)
     

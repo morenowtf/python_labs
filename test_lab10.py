@@ -34,7 +34,7 @@ except IndexError as e:
     print(f"   Ошибка при pop из пустого стека: {e}")
 
 # Тест Queue
-print("=== Тест Queue ===")
+print("\n=== Тест Queue ===")
 q = Queue()
 
 # Проверяем пустую очередь
@@ -74,7 +74,7 @@ except IndexError as e:
     print(f"   Ошибка при dequeue из пустой очереди: {e}")
 
 # Тест SinglyLinkedList
-print("=== Тест SinglyLinkedList ===")
+print("\n=== Тест SinglyLinkedList ===")
 lst = SinglyLinkedList()
 
 # Проверяем пустой список
