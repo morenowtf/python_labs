@@ -118,7 +118,7 @@ class Student:
         
         
         return (f"Студент: {self.fio}\n"
-                f"Дата рождения: {self.birthdate} (Возраст: {self.age()} лет)\n"
+                f"Дата рождения: {self.birthdate}\n"
                 f"Группа: {self.group}\n"
                 f"Средний балл (GPA): {self.gpa}")
         
