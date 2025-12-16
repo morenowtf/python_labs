@@ -1,4 +1,3 @@
-# python_labs
 # Лабораторная работа 4
 ## Задание A (io_txt_csv.py)
 ```python
@@ -165,5 +164,6 @@ if __name__ == "__main__":
 В файле "report.csv" получаем:
 
 [![505.png](https://i.postimg.cc/QC6L0Vrw/505.png)](https://postimg.cc/BP1wvSbB)
+
 
 
